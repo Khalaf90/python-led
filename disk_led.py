@@ -9,7 +9,7 @@ GPIO.setwarnings(False)  # Ignore warning for now
 GPIO.setmode(GPIO.BCM)  # Use physical pin numbering
 GPIO.setup(27, GPIO.OUT, initial=GPIO.LOW)  # Set pin 27 to be an output pin and set initial value to low (off)
 
-disk = psutil.disk_usage("/media/ubuntu/abr_demo/")
+disk = psutil.disk_usage("/media/ubuntu/demo/")
 #disk_percent_used = disk.percent
 
 

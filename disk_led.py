@@ -15,7 +15,7 @@ disk = psutil.disk_usage("/media/ubuntu/demo/")
 
 try:
         while True:  # Run forever
-                path_exists = os.path.exists("/media/ubuntu/abr_demo/")
+                path_exists = os.path.exists("/media/ubuntu/demo/")
                 disk_percent_used = disk.percent
                 #print(disk_percent_used)
                 if disk_percent_used > 98 and path_exists == 1:
@@ -31,7 +31,10 @@ try:
                                 GPIO.output(27, GPIO.HIGH)  # Turn off
                                 sleep(1)  # Sleep for 1 second
                                 GPIO.output(27, GPIO.LOW)  # Turn off
-                                sleep(1)  # Sleep for 1 second
+                                sleep(1)  # Sleep for 1 second                 
+                time.sleep(30) # wait to loop again so we don’t use the processor too much.
+                
+                
 except KeyboardInterrupt:
         GPIO.output(27, GPIO.LOW)
         print ('interrupted')
